@@ -5,7 +5,7 @@ namespace FluxEco\OpenApiClient\Adapters\Api;
 
 use FluxEco\OpenApiClient\Core\{Ports};
 
-class OpenApiConfig implements Ports\Configs\OpenApiConfig
+class OpenApiClientConfig implements Ports\Configs\OpenApiConfig
 {
     private string $client;
     private string $secret;
