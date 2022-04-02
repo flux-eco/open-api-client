@@ -1,18 +1,12 @@
 {
   "name": "flux-eco/open-api-client",
-  "description": "Component for flux-capacitor apps developed by fluxlabs",
-  "version": "0.0.1",
+  "description": "Assists in querying openapis",
+  "version": "0.0.2",
   "type": "flux-app",
   "keywords": [
-    "flux-ecosystem",
-    "flux-capacitor",
-    "fluxlabs ag",
-    "microservice",
-    "event sourcing",
-    "cqrs",
-    "json schema",
-    "asyncapi",
-    "openapi"
+    "flux-eco",
+    "open-api-client",
+    "fluxlabs"
   ],
   "homepage": "https://fluxlabs.ch",
   "license": "GPL-3.0-only",
