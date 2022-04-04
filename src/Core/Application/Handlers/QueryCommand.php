@@ -6,29 +6,29 @@ namespace FluxEco\OpenApiClient\Core\Application\Handlers;
 class QueryCommand
 {
     private string $authorization;
-    private string $endpoint;
+    private string $endpointUrl;
     private array $filter;
 
-    private function __construct(string $authorization, string $endpoint, array $filter)
+    private function __construct(string $authorization, string $endpointUrl, array $filter)
     {
         $this->authorization = $authorization;
-        $this->endpoint = $endpoint;
+        $this->endpointUrl = $endpointUrl;
         $this->filter = $filter;
     }
 
-    public static function new(string $authorization, string $endpoint, array $filter): self
+    public static function new(string $authorization, string $endpointUrl, array $filter): self
     {
         return new self(
             $authorization,
-            $endpoint,
+            $endpointUrl,
             $filter
         );
     }
 
 
-    public function getEndpoint(): string
+    public function getEndpointUrl(): string
     {
-        return $this->endpoint;
+        return $this->endpointUrl;
     }
 
 

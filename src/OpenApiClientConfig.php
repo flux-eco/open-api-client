@@ -1,27 +1,27 @@
 <?php
 
 
-namespace FluxEco\OpenApiClient\Adapters\Api;
+namespace FluxEco\OpenApiClient;
 
 use FluxEco\OpenApiClient\Core\{Ports};
 
 class OpenApiClientConfig implements Ports\Configs\OpenApiConfig
 {
-    private string $client;
+    private string $clientId;
     private string $secret;
     private string $scope;
     private string $apiUrl;
     private string $authenticationUrl;
 
     private function __construct(
-        string $client,
+        string $clientId,
         string $secret,
         string $scope,
         string $apiUrl,
         string $authenticationUrl
     )
     {
-        $this->client = $client;
+        $this->clientId = $clientId;
         $this->secret = $secret;
         $this->scope = $scope;
         $this->apiUrl = $apiUrl;
@@ -29,7 +29,7 @@ class OpenApiClientConfig implements Ports\Configs\OpenApiConfig
     }
 
     public static function new(
-        string $client,
+        string $clientId,
         string $secret,
         string $scope,
         string $apiUrl,
@@ -37,7 +37,7 @@ class OpenApiClientConfig implements Ports\Configs\OpenApiConfig
     ): self
     {
         return new self(
-            $client,
+            $clientId,
             $secret,
             $scope,
             $apiUrl,
@@ -45,9 +45,9 @@ class OpenApiClientConfig implements Ports\Configs\OpenApiConfig
         );
     }
 
-    final public function getClient(): string
+    final public function getClientId(): string
     {
-        return $this->client;
+        return $this->clientId;
     }
 
     final public function getSecret(): string

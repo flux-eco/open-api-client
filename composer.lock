@@ -1,0 +1,123 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "e9ea5889e3e5fdcf4e6c313a8549b4d3",
+    "packages": [
+        {
+            "name": "flux-eco/dot-env",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/flux-eco/dot-env.git",
+                "reference": "018e9cc0f6ccadbbe764abc987d86e22d1058f6f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/flux-eco/dot-env/zipball/018e9cc0f6ccadbbe764abc987d86e22d1058f6f",
+                "reference": "018e9cc0f6ccadbbe764abc987d86e22d1058f6f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "type": "flux-app",
+            "autoload": {
+                "files": [
+                    "fn/loadDotEnv.php"
+                ],
+                "psr-4": {
+                    "fluxy\\": [
+                        "fn/"
+                    ],
+                    "FluxEco\\DotEnv\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "fluxlabs ag",
+                    "email": "support@fluxlabs.ch",
+                    "homepage": "https://fluxlabs.ch",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Loads .env-Files",
+            "homepage": "https://fluxlabs.ch",
+            "keywords": [
+                "dot-env",
+                "flux-eco",
+                "fluxlabs"
+            ],
+            "support": {
+                "email": "support@fluxlabs.ch",
+                "source": "https://github.com/flux-eco/dot-env/tree/v1.1.0"
+            },
+            "time": "2022-04-03T03:56:56+00:00"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "swoole/ide-helper",
+            "version": "4.8.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swoole/ide-helper.git",
+                "reference": "dd87843a5040831f9ad40b68fb57879b7342ef61"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swoole/ide-helper/zipball/dd87843a5040831f9ad40b68fb57879b7342ef61",
+                "reference": "dd87843a5040831f9ad40b68fb57879b7342ef61",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Team Swoole",
+                    "email": "team@swoole.com"
+                }
+            ],
+            "description": "IDE help files for Swoole.",
+            "support": {
+                "issues": "https://github.com/swoole/ide-helper/issues",
+                "source": "https://github.com/swoole/ide-helper/tree/4.8.8"
+            },
+            "funding": [
+                {
+                    "url": "https://gitee.com/swoole/swoole?donate=true",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/swoole",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-03-17T18:24:39+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-yaml": "*"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

@@ -23,7 +23,7 @@ class QueryHandler {
     public function handle(QueryCommand $queryCommand): array {
         $curl = null;
         try {
-            $curl = curl_init($queryCommand->getEndpoint());
+            $curl = curl_init($queryCommand->getEndpointUrl());
             $headers = [
                 'Authorization' => $queryCommand->getAuthorization()
             ];
@@ -39,7 +39,7 @@ class QueryHandler {
             if ($status !== 200) {
                 echo "Exception".PHP_EOL;
                 echo $status.PHP_EOL;
-                echo "curlInfo";
+                echo "curlInfo".PHP_EOL;
                 print_r(curl_getinfo($curl));
                 echo PHP_EOL."content".PHP_EOL;
                 print_r($content);
