@@ -28,7 +28,7 @@ class OpenApiService
     {
         $openApiConfig = $this->openApiConfig;
         $authorizationCommand = Application\Handlers\AuthorizationCommand::new(
-            $openApiConfig->getClient(),
+            $openApiConfig->getClientId(),
             $openApiConfig->getSecret(),
             $openApiConfig->getScope(),
             $openApiConfig->getApiUrl(),
@@ -38,7 +38,8 @@ class OpenApiService
 
         echo "authorization: ".$authorization->getAuthorization();
 
-        $queryCommand = Application\Handlers\QueryCommand::new($authorization->getAuthorization(), $endpoint, $filter);
+        $endpointUrl = $openApiConfig->getApiUrl().$endpoint;
+        $queryCommand = Application\Handlers\QueryCommand::new($authorization->getAuthorization(), $endpointUrl, $filter);
         return Application\Handlers\QueryHandler::new()->handle($queryCommand);
     }
 }

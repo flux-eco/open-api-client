@@ -1,7 +1,7 @@
 {
   "name": "flux-eco/open-api-client",
   "description": "Assists in querying openapis",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "type": "flux-app",
   "keywords": [
     "flux-eco",
@@ -26,10 +26,9 @@
     "ext-curl": "*",
     "ext-json": "*",
     "ext-yaml": "*",
-    "composer-runtime-api": ">=2.1"
+    "flux-eco/dot-env": ">=0.0.1"
   },
   "require-dev": {
-    "composer/composer": ">=2.0",
     "swoole/ide-helper": ">=4.6"
   },
   "autoload": {

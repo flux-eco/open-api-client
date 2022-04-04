@@ -4,7 +4,7 @@ namespace FluxEco\OpenApiClient\Core\Ports\Configs;
 
 interface OpenApiConfig
 {
-    public function getClient(): string;
+    public function getClientId(): string;
 
     public function getSecret(): string;
 
