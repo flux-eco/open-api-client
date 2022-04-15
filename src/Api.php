@@ -2,7 +2,9 @@
 
 namespace FluxEco\OpenApiClient;
 
-class OpenApiClientApi
+use FluxEco\OpenApiClient\Adapters\Outbounds;
+
+class Api
 {
     private Core\Ports\OpenApiService $openApiService;
 
@@ -12,9 +14,16 @@ class OpenApiClientApi
         $this->openApiService = $openApiService;
     }
 
-    public static function new(OpenApiClientConfig $openApiConfig) : self
+    public static function new(Config $config) : self
     {
-        $outbounds = Adapters\Configs\OpenApiOutbounds::new($openApiConfig);
+        $outbounds = Outbounds::new($config);
+        $openApiService = Core\Ports\OpenApiService::new($outbounds);
+        return new self($openApiService);
+    }
+
+    public static function newFromEnv(string $envPrefix) : self
+    {
+        $outbounds = Outbounds::new(Config::newFromEnv($envPrefix));
         $openApiService = Core\Ports\OpenApiService::new($outbounds);
         return new self($openApiService);
     }

@@ -2,6 +2,25 @@
 
 This component is supposed to assist in querying openapis.
 
+## Functional Usage
+
+```
+fluxDotEnv\loadDotEnv(__DIR__);
+
+$result = fluxOpenApiClient\query('/api/ilias/accounts', [], 'EXAMPLE_');
+print_r($result); exit;
+```
+
+outputs:
+```
+Array
+(
+  [firstname] => Emmett
+  [lastname] => Brown
+  [lastChanged] => 2021-01-15T05:30:10+01:00
+)
+```
+
 ## Contributing :purple_heart:
 
 Please ...

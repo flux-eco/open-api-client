@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9ea5889e3e5fdcf4e6c313a8549b4d3",
+    "content-hash": "972a00ce9a10c67971d48f25705e9f1d",
     "packages": [
         {
             "name": "flux-eco/dot-env",
