@@ -1,11 +1,10 @@
 <?php
 
-
 namespace FluxEco\OpenApiClient;
 
 use FluxEco\OpenApiClient\Core\{Ports};
 
-class OpenApiClientConfig implements Ports\Configs\OpenApiConfig
+class Config implements Ports\Config
 {
     private string $clientId;
     private string $secret;
@@ -19,8 +18,7 @@ class OpenApiClientConfig implements Ports\Configs\OpenApiConfig
         string $scope,
         string $apiUrl,
         string $authenticationUrl
-    )
-    {
+    ) {
         $this->clientId = $clientId;
         $this->secret = $secret;
         $this->scope = $scope;
@@ -34,8 +32,7 @@ class OpenApiClientConfig implements Ports\Configs\OpenApiConfig
         string $scope,
         string $apiUrl,
         string $authenticationUrl
-    ): self
-    {
+    ) : self {
         return new self(
             $clientId,
             $secret,
@@ -45,27 +42,39 @@ class OpenApiClientConfig implements Ports\Configs\OpenApiConfig
         );
     }
 
-    final public function getClientId(): string
+    public static function newFromEnv(string $envPrefix) : self
+    {
+        $apiEnv = Env::new($envPrefix);
+        return new self(
+            $apiEnv->getOpenApiClientId(),
+            $apiEnv->getOpenApiSecret(),
+            $apiEnv->getOpenApiScope(),
+            $apiEnv->getOpenApiUrl(),
+            $apiEnv->getOpenApiAuthenticationUrl()
+        );
+    }
+
+    final public function getClientId() : string
     {
         return $this->clientId;
     }
 
-    final public function getSecret(): string
+    final public function getSecret() : string
     {
         return $this->secret;
     }
 
-    final public function getScope(): string
+    final public function getScope() : string
     {
         return $this->scope;
     }
 
-    final public function getApiUrl(): string
+    final public function getApiUrl() : string
     {
         return $this->apiUrl;
     }
 
-    final public function getAuthenticationUrl(): string
+    final public function getAuthenticationUrl() : string
     {
         return $this->authenticationUrl;
     }

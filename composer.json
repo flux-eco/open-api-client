@@ -32,9 +32,15 @@
     "swoole/ide-helper": ">=4.6"
   },
   "autoload": {
+    "files": [
+      "fn/query.php"
+    ],
     "psr-4": {
       "FluxEco\\OpenApiClient\\": [
         "src/"
+      ],
+      "fluxOpenApiClient\\": [
+        "fn/"
       ]
     }
   },

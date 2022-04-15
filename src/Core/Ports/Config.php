@@ -1,8 +1,8 @@
 <?php
 
-namespace FluxEco\OpenApiClient\Core\Ports\Configs;
+namespace FluxEco\OpenApiClient\Core\Ports;
 
-interface OpenApiConfig
+interface Config
 {
     public function getClientId(): string;
 

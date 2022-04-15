@@ -6,27 +6,27 @@ use FluxEco\OpenApiClient\Core\{Application, Ports};
 
 class OpenApiService
 {
-    private Ports\Configs\OpenApiConfig $openApiConfig;
+    private Ports\Config $config;
 
     private function __construct(
-        Ports\Configs\OpenApiConfig $openApiConfig
+        Ports\Config $config
     )
     {
-        $this->openApiConfig = $openApiConfig;
+        $this->config = $config;
     }
 
     public static function new(
-        Ports\Configs\OpenApiOutbounds $openApiOutbounds
+        Ports\Outbounds $openApiOutbounds
     ): self
     {
         return new self(
-            $openApiOutbounds->getOpenApiConfig()
+            $openApiOutbounds->getConfig()
         );
     }
 
     public function query(string $endpoint, array $filter): array
     {
-        $openApiConfig = $this->openApiConfig;
+        $openApiConfig = $this->config;
         $authorizationCommand = Application\Handlers\AuthorizationCommand::new(
             $openApiConfig->getClientId(),
             $openApiConfig->getSecret(),
