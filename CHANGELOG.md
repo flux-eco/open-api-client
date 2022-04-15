@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## [1.0.1]
+* updated tags
+
 ## [1.0.0] - First Release
 Features:
 * Handle authentication
