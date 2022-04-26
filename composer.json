@@ -1,7 +1,7 @@
 {
   "name": "flux-eco/open-api-client",
   "description": "Assists in querying openapis",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "flux-app",
   "keywords": [
     "flux-eco",
