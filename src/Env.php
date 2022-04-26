@@ -8,7 +8,7 @@ use FluxEco\OpenApiClient\Core\{Ports};
 class Env
 {
     public const OPEN_API_CLIENT_ID='OPEN_API_CLIENT_ID';
-    public const OPEN_API_SECRET='OPEN_API_SECRET';
+    public const OPEN_API_SECRET_FILE='OPEN_API_SECRET_FILE';
     public const OPEN_API_SCOPE='OPEN_API_SCOPE';
     public const OPEN_API_API_URL='OPEN_API_API_URL';
     public const OPEN_API_AUTHENTICATION_URL='OPEN_API_AUTHENTICATION_URL';
@@ -28,7 +28,8 @@ class Env
     }
 
     public function getOpenApiSecret(): string {
-        return getenv($this->envPrefix.self::OPEN_API_SECRET);
+        $secretFile = getenv($this->envPrefix . self::OPEN_API_SECRET_FILE);
+        return filter_var(file_get_contents($secretFile), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
     }
 
     public function getOpenApiScope(): string {
