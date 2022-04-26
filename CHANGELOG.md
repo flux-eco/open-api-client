@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## [1.0.2]
+* change: env uses password secret file
+
 ## [1.0.1]
 * updated tags
 
