@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## [1.0.3]
+* change: env uses password secret file or env variable
+
 ## [1.0.2]
 * change: env uses password secret file
 
